@@ -1,0 +1,523 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "Civic Teal",
+  "version": "1.0.0",
+  "description": "Neutral civic election information platform. Semantic tokens use {palette.*} references; choose semantic.light or semantic.dark according to theme. Colors must not imply political party identity.",
+  "palette": {
+    "teal": {
+      "50": "#F0FAFA",
+      "100": "#DDF3F2",
+      "200": "#BCE5E4",
+      "300": "#8FD1D1",
+      "400": "#58B5B7",
+      "500": "#2C9DA3",
+      "600": "#137C83",
+      "700": "#0F6268",
+      "800": "#104D54",
+      "900": "#113D44",
+      "950": "#09282E"
+    },
+    "slate": {
+      "50": "#F7FAFA",
+      "100": "#ECF2F3",
+      "200": "#D9E4E7",
+      "300": "#B9CBD0",
+      "400": "#91A8AE",
+      "500": "#718B92",
+      "600": "#576F77",
+      "700": "#40565F",
+      "800": "#304550",
+      "900": "#243746",
+      "950": "#14252F"
+    },
+    "green": {
+      "50": "#F0FBF5",
+      "100": "#DDF7E8",
+      "200": "#B8EDD1",
+      "300": "#82DEB0",
+      "400": "#47C68B",
+      "500": "#20A66D",
+      "600": "#168455",
+      "700": "#116A46",
+      "800": "#10543A",
+      "900": "#104631",
+      "950": "#06291C"
+    },
+    "blue": {
+      "50": "#EFF8FF",
+      "100": "#DCEEFF",
+      "200": "#B8DFFF",
+      "300": "#88C8FF",
+      "400": "#53A8F5",
+      "500": "#2988DC",
+      "600": "#1C6CB7",
+      "700": "#1C568F",
+      "800": "#1D4974",
+      "900": "#1C3E61",
+      "950": "#11263F"
+    },
+    "amber": {
+      "50": "#FFFBEB",
+      "100": "#FFF1C7",
+      "200": "#FFE28A",
+      "300": "#FFCC4D",
+      "400": "#F3AD20",
+      "500": "#D98B0B",
+      "600": "#AD6800",
+      "700": "#8A5005",
+      "800": "#70420C",
+      "900": "#5D390F",
+      "950": "#361D05"
+    },
+    "red": {
+      "50": "#FFF3F2",
+      "100": "#FFE3DF",
+      "200": "#FFC8C0",
+      "300": "#FFA096",
+      "400": "#F8756A",
+      "500": "#E64D45",
+      "600": "#C73530",
+      "700": "#A52A27",
+      "800": "#872725",
+      "900": "#702725",
+      "950": "#3E1110"
+    },
+    "neutral": {
+      "0": "#FFFFFF",
+      "50": "#FCFDFD",
+      "100": "#F5FAF9",
+      "200": "#EAF3F2",
+      "300": "#D9E7E6",
+      "400": "#B8CCCB",
+      "500": "#8BA7A6",
+      "600": "#637D83",
+      "700": "#50666C",
+      "800": "#334A51",
+      "900": "#243746",
+      "950": "#14252F",
+      "1000": "#0C1A20"
+    }
+  },
+  "legacyCivicTealAnchors": {
+    "primary": "#137C83",
+    "primaryHover": "#0F6268",
+    "secondary": "#2C9DA3",
+    "accent": "#A8DADC",
+    "background": "#F5FAF9",
+    "surface": "#FFFFFF",
+    "textPrimary": "#243746",
+    "textSecondary": "#637D83",
+    "border": "#D9E7E6"
+  },
+  "semantic": {
+    "light": {
+      "brand": {
+        "primary": "{palette.teal.600}",
+        "primaryHover": "{palette.teal.700}",
+        "primaryActive": "{palette.teal.800}",
+        "primarySubtle": "{palette.teal.50}",
+        "primarySoft": "{palette.teal.100}",
+        "secondary": "{palette.teal.500}",
+        "secondaryHover": "{palette.teal.600}",
+        "accent": "#A8DADC",
+        "onPrimary": "{palette.neutral.0}",
+        "onSecondary": "{palette.neutral.0}"
+      },
+      "background": {
+        "canvas": "{palette.neutral.100}",
+        "base": "{palette.neutral.0}",
+        "subtle": "{palette.slate.50}",
+        "sunken": "{palette.neutral.200}",
+        "inverse": "{palette.slate.900}",
+        "overlay": "#14252FB3"
+      },
+      "surface": {
+        "default": "{palette.neutral.0}",
+        "raised": "{palette.neutral.0}",
+        "subtle": "{palette.neutral.100}",
+        "hover": "{palette.teal.50}",
+        "selected": "{palette.teal.100}",
+        "disabled": "{palette.slate.100}",
+        "inverse": "{palette.slate.900}"
+      },
+      "text": {
+        "primary": "{palette.slate.900}",
+        "secondary": "{palette.neutral.600}",
+        "tertiary": "{palette.slate.600}",
+        "muted": "{palette.slate.600}",
+        "disabled": "{palette.slate.500}",
+        "inverse": "{palette.neutral.0}",
+        "link": "{palette.teal.700}",
+        "linkHover": "{palette.teal.800}",
+        "onBrand": "{palette.neutral.0}"
+      },
+      "icon": {
+        "primary": "{palette.slate.900}",
+        "secondary": "{palette.slate.600}",
+        "muted": "{palette.slate.500}",
+        "brand": "{palette.teal.600}",
+        "inverse": "{palette.neutral.0}"
+      },
+      "border": {
+        "default": "{palette.neutral.300}",
+        "subtle": "{palette.slate.100}",
+        "strong": "{palette.slate.400}",
+        "brand": "{palette.teal.600}",
+        "focus": "{palette.teal.700}",
+        "disabled": "{palette.slate.200}",
+        "error": "{palette.red.600}"
+      },
+      "status": {
+        "info": {
+          "solid": "{palette.blue.700}",
+          "solidHover": "{palette.blue.800}",
+          "onSolid": "{palette.neutral.0}",
+          "subtle": "{palette.blue.50}",
+          "soft": "{palette.blue.100}",
+          "text": "{palette.blue.800}",
+          "border": "{palette.blue.200}",
+          "icon": "{palette.blue.700}"
+        },
+        "success": {
+          "solid": "{palette.green.700}",
+          "solidHover": "{palette.green.800}",
+          "onSolid": "{palette.neutral.0}",
+          "subtle": "{palette.green.50}",
+          "soft": "{palette.green.100}",
+          "text": "{palette.green.800}",
+          "border": "{palette.green.200}",
+          "icon": "{palette.green.700}"
+        },
+        "warning": {
+          "solid": "{palette.amber.700}",
+          "solidHover": "{palette.amber.800}",
+          "onSolid": "{palette.neutral.0}",
+          "subtle": "{palette.amber.50}",
+          "soft": "{palette.amber.100}",
+          "text": "{palette.amber.800}",
+          "border": "{palette.amber.200}",
+          "icon": "{palette.amber.700}"
+        },
+        "error": {
+          "solid": "{palette.red.700}",
+          "solidHover": "{palette.red.800}",
+          "onSolid": "{palette.neutral.0}",
+          "subtle": "{palette.red.50}",
+          "soft": "{palette.red.100}",
+          "text": "{palette.red.800}",
+          "border": "{palette.red.200}",
+          "icon": "{palette.red.700}"
+        }
+      },
+      "interaction": {
+        "hover": "{palette.teal.50}",
+        "pressed": "{palette.teal.100}",
+        "selected": "{palette.teal.100}",
+        "focusRing": "{palette.teal.700}",
+        "focusRingOuter": "{palette.neutral.0}",
+        "disabledBackground": "{palette.slate.100}",
+        "disabledForeground": "{palette.slate.500}",
+        "skeleton": "{palette.slate.200}"
+      },
+      "button": {
+        "primary": {
+          "background": "{palette.teal.600}",
+          "hover": "{palette.teal.700}",
+          "pressed": "{palette.teal.800}",
+          "text": "{palette.neutral.0}",
+          "disabledBackground": "{palette.slate.200}",
+          "disabledText": "{palette.slate.600}"
+        },
+        "secondary": {
+          "background": "{palette.teal.100}",
+          "hover": "{palette.teal.200}",
+          "pressed": "{palette.teal.300}",
+          "text": "{palette.teal.800}",
+          "border": "{palette.teal.200}"
+        },
+        "outline": {
+          "background": "{palette.neutral.0}",
+          "hover": "{palette.teal.50}",
+          "pressed": "{palette.teal.100}",
+          "text": "{palette.teal.700}",
+          "border": "{palette.teal.600}"
+        },
+        "ghost": {
+          "background": "#FFFFFF00",
+          "hover": "{palette.teal.50}",
+          "pressed": "{palette.teal.100}",
+          "text": "{palette.teal.700}"
+        },
+        "danger": {
+          "background": "{palette.red.700}",
+          "hover": "{palette.red.800}",
+          "pressed": "{palette.red.900}",
+          "text": "{palette.neutral.0}"
+        }
+      },
+      "input": {
+        "background": "{palette.neutral.0}",
+        "text": "{palette.slate.900}",
+        "placeholder": "{palette.slate.600}",
+        "border": "{palette.neutral.300}",
+        "hoverBorder": "{palette.slate.500}",
+        "focusBorder": "{palette.teal.700}",
+        "errorBorder": "{palette.red.600}",
+        "disabledBackground": "{palette.slate.100}",
+        "disabledText": "{palette.slate.600}"
+      },
+      "navigation": {
+        "background": "{palette.neutral.0}",
+        "text": "{palette.slate.700}",
+        "hoverBackground": "{palette.teal.50}",
+        "activeBackground": "{palette.teal.100}",
+        "activeText": "{palette.teal.800}",
+        "divider": "{palette.neutral.300}"
+      },
+      "card": {
+        "background": "{palette.neutral.0}",
+        "border": "{palette.neutral.300}",
+        "hoverBorder": "{palette.teal.300}",
+        "selectedBorder": "{palette.teal.600}"
+      },
+      "table": {
+        "header": "{palette.neutral.200}",
+        "row": "{palette.neutral.0}",
+        "rowAlternate": "{palette.slate.50}",
+        "rowHover": "{palette.teal.50}",
+        "rowSelected": "{palette.teal.100}",
+        "divider": "{palette.neutral.300}"
+      },
+      "chart": {
+        "categorical": [
+          "#137C83",
+          "#2988DC",
+          "#20A66D",
+          "#D98B0B",
+          "#835CC2",
+          "#E2776E",
+          "#607987",
+          "#55A7AD"
+        ],
+        "grid": "{palette.slate.200}",
+        "axis": "{palette.slate.600}",
+        "tooltipBackground": "{palette.slate.900}",
+        "tooltipText": "{palette.neutral.0}",
+        "positive": "{palette.green.700}",
+        "negative": "{palette.red.700}",
+        "neutral": "{palette.slate.600}"
+      }
+    },
+    "dark": {
+      "brand": {
+        "primary": "{palette.teal.300}",
+        "primaryHover": "{palette.teal.200}",
+        "primaryActive": "{palette.teal.100}",
+        "primarySubtle": "{palette.teal.900}",
+        "primarySoft": "{palette.teal.800}",
+        "secondary": "{palette.teal.400}",
+        "secondaryHover": "{palette.teal.300}",
+        "accent": "#A8DADC",
+        "onPrimary": "{palette.slate.950}",
+        "onSecondary": "{palette.slate.950}"
+      },
+      "background": {
+        "canvas": "{palette.neutral.1000}",
+        "base": "{palette.slate.950}",
+        "subtle": "{palette.slate.900}",
+        "sunken": "#09171C",
+        "inverse": "{palette.neutral.0}",
+        "overlay": "#000000B3"
+      },
+      "surface": {
+        "default": "{palette.slate.900}",
+        "raised": "{palette.slate.800}",
+        "subtle": "{palette.slate.950}",
+        "hover": "{palette.teal.900}",
+        "selected": "{palette.teal.800}",
+        "disabled": "{palette.slate.800}",
+        "inverse": "{palette.neutral.0}"
+      },
+      "text": {
+        "primary": "#F2F8F8",
+        "secondary": "#C2D3D6",
+        "tertiary": "#A9C1C5",
+        "muted": "#A9C1C5",
+        "disabled": "#A9C1C5",
+        "inverse": "{palette.slate.950}",
+        "link": "{palette.teal.200}",
+        "linkHover": "{palette.teal.100}",
+        "onBrand": "{palette.slate.950}"
+      },
+      "icon": {
+        "primary": "#F2F8F8",
+        "secondary": "#C2D3D6",
+        "muted": "#A9C1C5",
+        "brand": "{palette.teal.200}",
+        "inverse": "{palette.slate.950}"
+      },
+      "border": {
+        "default": "{palette.slate.700}",
+        "subtle": "{palette.slate.800}",
+        "strong": "{palette.slate.500}",
+        "brand": "{palette.teal.300}",
+        "focus": "{palette.teal.200}",
+        "disabled": "{palette.slate.700}",
+        "error": "{palette.red.300}"
+      },
+      "status": {
+        "info": {
+          "solid": "{palette.blue.300}",
+          "solidHover": "{palette.blue.200}",
+          "onSolid": "{palette.blue.950}",
+          "subtle": "{palette.blue.950}",
+          "soft": "{palette.blue.900}",
+          "text": "{palette.blue.200}",
+          "border": "{palette.blue.700}",
+          "icon": "{palette.blue.300}"
+        },
+        "success": {
+          "solid": "{palette.green.300}",
+          "solidHover": "{palette.green.200}",
+          "onSolid": "{palette.green.950}",
+          "subtle": "{palette.green.950}",
+          "soft": "{palette.green.900}",
+          "text": "{palette.green.200}",
+          "border": "{palette.green.700}",
+          "icon": "{palette.green.300}"
+        },
+        "warning": {
+          "solid": "{palette.amber.300}",
+          "solidHover": "{palette.amber.200}",
+          "onSolid": "{palette.amber.950}",
+          "subtle": "{palette.amber.950}",
+          "soft": "{palette.amber.900}",
+          "text": "{palette.amber.200}",
+          "border": "{palette.amber.700}",
+          "icon": "{palette.amber.300}"
+        },
+        "error": {
+          "solid": "{palette.red.300}",
+          "solidHover": "{palette.red.200}",
+          "onSolid": "{palette.red.950}",
+          "subtle": "{palette.red.950}",
+          "soft": "{palette.red.900}",
+          "text": "{palette.red.200}",
+          "border": "{palette.red.700}",
+          "icon": "{palette.red.300}"
+        }
+      },
+      "interaction": {
+        "hover": "{palette.teal.900}",
+        "pressed": "{palette.teal.800}",
+        "selected": "{palette.teal.800}",
+        "focusRing": "{palette.teal.200}",
+        "focusRingOuter": "{palette.slate.950}",
+        "disabledBackground": "{palette.slate.800}",
+        "disabledForeground": "#A9C1C5",
+        "skeleton": "{palette.slate.700}"
+      },
+      "button": {
+        "primary": {
+          "background": "{palette.teal.300}",
+          "hover": "{palette.teal.200}",
+          "pressed": "{palette.teal.100}",
+          "text": "{palette.slate.950}",
+          "disabledBackground": "{palette.slate.700}",
+          "disabledText": "#D3E0E2"
+        },
+        "secondary": {
+          "background": "{palette.teal.800}",
+          "hover": "{palette.teal.700}",
+          "pressed": "{palette.teal.600}",
+          "text": "#F2F8F8",
+          "border": "{palette.teal.700}"
+        },
+        "outline": {
+          "background": "#FFFFFF00",
+          "hover": "{palette.teal.900}",
+          "pressed": "{palette.teal.800}",
+          "text": "{palette.teal.200}",
+          "border": "{palette.teal.300}"
+        },
+        "ghost": {
+          "background": "#FFFFFF00",
+          "hover": "{palette.teal.900}",
+          "pressed": "{palette.teal.800}",
+          "text": "{palette.teal.200}"
+        },
+        "danger": {
+          "background": "{palette.red.300}",
+          "hover": "{palette.red.200}",
+          "pressed": "{palette.red.100}",
+          "text": "{palette.red.950}"
+        }
+      },
+      "input": {
+        "background": "{palette.slate.900}",
+        "text": "#F2F8F8",
+        "placeholder": "#C2D3D6",
+        "border": "{palette.slate.600}",
+        "hoverBorder": "{palette.slate.400}",
+        "focusBorder": "{palette.teal.200}",
+        "errorBorder": "{palette.red.300}",
+        "disabledBackground": "{palette.slate.800}",
+        "disabledText": "#A9C1C5"
+      },
+      "navigation": {
+        "background": "{palette.slate.950}",
+        "text": "#C2D3D6",
+        "hoverBackground": "{palette.teal.900}",
+        "activeBackground": "{palette.teal.800}",
+        "activeText": "#F2F8F8",
+        "divider": "{palette.slate.700}"
+      },
+      "card": {
+        "background": "{palette.slate.900}",
+        "border": "{palette.slate.700}",
+        "hoverBorder": "{palette.teal.500}",
+        "selectedBorder": "{palette.teal.300}"
+      },
+      "table": {
+        "header": "{palette.slate.800}",
+        "row": "{palette.slate.900}",
+        "rowAlternate": "{palette.slate.950}",
+        "rowHover": "{palette.teal.900}",
+        "rowSelected": "{palette.teal.800}",
+        "divider": "{palette.slate.700}"
+      },
+      "chart": {
+        "categorical": [
+          "#8FD1D1",
+          "#88C8FF",
+          "#82DEB0",
+          "#FFCC4D",
+          "#B69AE3",
+          "#FFA096",
+          "#B9CBD0",
+          "#58B5B7"
+        ],
+        "grid": "{palette.slate.700}",
+        "axis": "#C2D3D6",
+        "tooltipBackground": "{palette.neutral.0}",
+        "tooltipText": "{palette.slate.950}",
+        "positive": "{palette.green.300}",
+        "negative": "{palette.red.300}",
+        "neutral": "{palette.slate.300}"
+      }
+    }
+  },
+  "usageNotes": {
+    "defaultTheme": "light",
+    "referenceSyntax": "{palette.color.scale}",
+    "politicalNeutrality": "Use a separate explicit party label/logo for party affiliation; do not infer party from brand, charts or status colors.",
+    "statusMeaning": {
+      "info": "Informational notice",
+      "success": "Completed or verified operation",
+      "warning": "Needs attention, not a political judgment",
+      "error": "Failed operation or validation error"
+    },
+    "contrast": "Test all actual foreground/background combinations against WCAG AA (4.5:1 body text, 3:1 large text and essential UI graphics). Disabled states may be exempt depending on use.",
+    "chartColors": "Categorical colors represent distinct data series only; never use as unlabelled political identities."
+  }
+}

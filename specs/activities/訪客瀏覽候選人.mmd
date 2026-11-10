@@ -1,0 +1,33 @@
+%% Activity: 訪客瀏覽候選人
+%% ACTOR: @訪客 -> specs/actors/訪客.md
+%% 範圍（Q1 已確認）：涵蓋臺北市長（全市選區，6 人）與臺北市議員（第1~8選舉區，98 人）；地圖選區對應市議員選舉區
+%% 市長入口（Q2 已確認）：上方「市長｜市議員」切換；市長模式下地圖不分區
+%% 頁面（Q3 已確認）：首頁即分區頁，首頁 3D 地圖直接可 hover / 點擊選區
+flowchart TD
+    START([開始]) --> S1
+    S1["[STEP:1] @訪客 進入首頁，檢視台北市地形 3D 地圖<br/>{features/district/瀏覽選區地圖.feature}"]
+    S1 --> S2
+    S2["[STEP:2] @訪客 切換選舉類別（市長｜市議員）<br/>{features/district/瀏覽選區地圖.feature}"]
+    S2 --> B1{選舉類別}
+    B1 -->|市議員| S3
+    B1 -->|市長（預設）| S3M
+    S3["[STEP:3] @訪客 hover 市議員選區，該選區亮起<br/>{features/district/瀏覽選區地圖.feature}"]
+    %% Q13 已確認：觸控裝置無亮起預覽，點一下選區直接開啟卡夾（STEP:3 / STEP:3' 僅適用於有 hover 的裝置）
+    S3 --> S4
+    S4["[STEP:4] @訪客 點擊市議員選區（第1~6區在地圖上；第7、8區在地圖旁另外顯示），彈窗卡夾顯示該選區所有候選人<br/>{features/candidate/查詢選區候選人.feature}"]
+    S3M["[STEP:3'] @訪客 hover（不分區的）地圖，整個臺北市亮起<br/>{features/district/瀏覽選區地圖.feature}"]
+    S3M --> S4M
+    S4M["[STEP:4'] @訪客 點擊（不分區的）地圖，彈窗卡夾顯示所有市長候選人<br/>{features/candidate/查詢選區候選人.feature}"]
+    %% Q4 已確認：市長模式下整個臺北市為一個選區，hover 整市亮起、點擊地圖開啟市長卡夾；首頁預設為市長模式
+    S4 --> S5
+    S4M --> S5
+    S5["[STEP:5] @訪客 點擊候選人卡片，進入全螢幕候選人頁<br/>{features/candidate/查詢候選人詳情.feature}"]
+    %% Q6/Q7 已確認：全螢幕頁返回 → 回到原選區卡夾；卡夾以 × 按鈕或點擊彈窗外遮罩關閉 → 回到地圖
+    S5 --> S6
+    S6["[STEP:6] @訪客 在全螢幕候選人頁按返回，回到原選區卡夾彈窗<br/>{features/candidate/查詢候選人詳情.feature}"]
+    S6 --> B2{繼續看候選人？}
+    B2 -->|是| S5
+    B2 -->|否| S7
+    S7["[STEP:7] @訪客 以 × 按鈕或點擊彈窗外關閉卡夾，回到地圖<br/>{features/candidate/查詢選區候選人.feature}"]
+    S7 --> END([結束])
+    %% 內容來源（Q5 已確認）：大頭照、3D 模型、政見由專案擁有者以靜態檔案放入 repo 並重新部署；無後台、無內容維護者 Actor

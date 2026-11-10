@@ -1,0 +1,45 @@
+// Phase 02: Entity Modeling
+// 靜態網站（Q5）：此模型描述 repo 內的靜態資料檔結構，非資料庫。
+// 資料來源：docs/2026_臺北市_市長與市議員候選人登記資料.xlsx + 專案擁有者提供的素材。
+// 欄位僅取自 features/** 的 Rule 所需；xlsx 中的登記日期、來源 PDF 頁碼目前沒有 Rule 使用，未納入。
+
+Enum election_type {
+  mayor   [note: '市長；全市單一選區']
+  council [note: '市議員；第1~8選舉區']
+}
+
+Table district {
+  id            varchar [pk, note: '例：taipei、council-1 ... council-8']
+  name          varchar [not null, note: 'xlsx「選舉區」原文，例：臺北市、臺北市第1選舉區']
+  election_type election_type [not null]
+  on_map        boolean [not null, note: '是否畫在 3D 地圖上；市長(臺北市)與第1~6選舉區為 true，第7、8選舉區為 false，改在地圖旁另外顯示（Q9）']
+  sort_order    int     [not null, note: '地圖旁顯示順序；ASM：依選舉區編號']
+  Note: '瀏覽選區地圖.feature、查詢選區候選人.feature'
+}
+
+Table district_map_object {
+  district_id varchar [pk, ref: - district.id]
+  object_name varchar [not null, note: '3D 地圖模型（glTF）中該選舉區的物件名稱，用於 hover 亮起與點擊判定']
+  Note: '選舉區邊界直接切在 3D 地圖模型中，每區一個獨立物件（Phase 02 已確認）；邊界依中選會公告製作（Q9）。只有第1~6選舉區需要；市長模式以整個模型為單一選區'
+}
+
+Table candidate {
+  id            varchar [pk]
+  district_id   varchar [not null, ref: > district.id]
+  name          varchar [not null, note: 'xlsx「候選人姓名」']
+  party         varchar [not null, note: 'xlsx「推薦之政黨」原文；無黨籍為字串「無」']
+  source_order  int     [not null, note: '來源順序，卡片預設排序依據（Q11）']
+  ballot_number int     [null, note: '抽籤號次；尚未公告前為空，公告後改依此排序（Q11）']
+  avatar_2d     varchar [null, note: '卡通 2D 大頭照檔案路徑；空值時顯示中性剪影（Q12）']
+  model_3d      varchar [null, note: '3D 模型檔案路徑；空值時顯示中性剪影（Q12）']
+  Note: '查詢選區候選人.feature、查詢候選人詳情.feature'
+}
+
+Table policy {
+  id           varchar [pk]
+  candidate_id varchar [not null, ref: > candidate.id]
+  title        varchar [not null, note: '卡夾卡片只顯示標題清單（Q10）']
+  body         text    [null, note: '詳情頁右側的政見介紹內文；可為空，空時詳情頁只列標題（Phase 02 已確認）']
+  sort_order   int     [not null, note: 'ASM：顯示順序依專案擁有者提供的順序']
+  Note: '候選人沒有任何 policy 時，卡片與詳情頁顯示「尚未提供」類提示文字（Q12）'
+}
