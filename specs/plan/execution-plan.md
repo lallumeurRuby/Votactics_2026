@@ -1,8 +1,9 @@
 # Execution Plan
 
-> **進度（2026-11-10 暫停）**：Phase 01 Discovery、Phase 02 Entity Modeling、Phase 03 BDD Analysis 已完成；Phase 04 不適用（靜態網站）。
-> 下一步 Phase 05-08 實作，**待使用者決定技術棧**（框架、3D 函式庫、feature 測試工具）。
-> 未決小項：Esc 鍵目前規格為「不關閉卡夾」（Q7 未選），待使用者確認是否保留；feature 檔尚未經 Gherkin 解析器驗證。
+> **進度（2026-11-11）**：Phase 01 Discovery、Phase 02 Entity Modeling、Phase 03 BDD Analysis 已完成；Phase 04 不適用（靜態網站）。
+> 2026-11-11 補完未決小項：Q16 Esc 改為關閉卡夾；Q17/Q18 地圖旁第 7、8 區行為與地圖選區一致；三個 feature 檔已通過 @cucumber/gherkin 解析（25 Rules / 35 Examples）。
+> 技術棧方向已定為 React + Next.js + 3D；細項（3D 函式庫、樣式、feature 測試工具）於 Phase 05 以 `/aibdd-next3d-frontend` Step 2 確認。
+> 下一步：Phase 05-08 實作（`/aibdd-next3d-frontend`）。
 
 Phase 01 Discovery（Greenfield）產出。範圍：2026 臺北市長（全市選區，6 人）與臺北市議員（第 1～8 選舉區，98 人）候選人資訊平台。
 
@@ -19,6 +20,8 @@ Phase 01 Discovery（Greenfield）產出。範圍：2026 臺北市長（全市�
 | Q10/Q11 | 卡片只列政見標題；依來源順序排列，公告抽籤號次後改依號次 |
 | Q12/Q15 | 缺大頭照／3D 模型用中性剪影佔位，缺政見或空選區顯示提示文字 |
 | Q13/Q14 | 觸控裝置點一下直接開卡夾；WebGL 不支援時只顯示提示 |
+| Q16 | 卡夾也可按 Esc 關閉（取代原「Esc 不關閉」） |
+| Q17/Q18 | 地圖旁的第 7、8 區：點擊開卡夾、hover 亮起，與地圖上選區一致 |
 
 ## 概覽
 

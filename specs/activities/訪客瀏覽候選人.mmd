@@ -11,7 +11,8 @@ flowchart TD
     S2 --> B1{選舉類別}
     B1 -->|市議員| S3
     B1 -->|市長（預設）| S3M
-    S3["[STEP:3] @訪客 hover 市議員選區，該選區亮起<br/>{features/district/瀏覽選區地圖.feature}"]
+    S3["[STEP:3] @訪客 hover 市議員選區（含地圖旁的第7、8區），該選區亮起<br/>{features/district/瀏覽選區地圖.feature}"]
+    %% Q17/Q18 已確認：地圖旁的第7、8區與地圖上的選區行為一致（hover 亮起、點擊開卡夾）
     %% Q13 已確認：觸控裝置無亮起預覽，點一下選區直接開啟卡夾（STEP:3 / STEP:3' 僅適用於有 hover 的裝置）
     S3 --> S4
     S4["[STEP:4] @訪客 點擊市議員選區（第1~6區在地圖上；第7、8區在地圖旁另外顯示），彈窗卡夾顯示該選區所有候選人<br/>{features/candidate/查詢選區候選人.feature}"]
@@ -22,12 +23,12 @@ flowchart TD
     S4 --> S5
     S4M --> S5
     S5["[STEP:5] @訪客 點擊候選人卡片，進入全螢幕候選人頁<br/>{features/candidate/查詢候選人詳情.feature}"]
-    %% Q6/Q7 已確認：全螢幕頁返回 → 回到原選區卡夾；卡夾以 × 按鈕或點擊彈窗外遮罩關閉 → 回到地圖
+    %% Q6/Q7 已確認：全螢幕頁返回 → 回到原選區卡夾；卡夾以 × 按鈕、點擊彈窗外遮罩或 Esc 鍵（Q16）關閉 → 回到地圖
     S5 --> S6
     S6["[STEP:6] @訪客 在全螢幕候選人頁按返回，回到原選區卡夾彈窗<br/>{features/candidate/查詢候選人詳情.feature}"]
     S6 --> B2{繼續看候選人？}
     B2 -->|是| S5
     B2 -->|否| S7
-    S7["[STEP:7] @訪客 以 × 按鈕或點擊彈窗外關閉卡夾，回到地圖<br/>{features/candidate/查詢選區候選人.feature}"]
+    S7["[STEP:7] @訪客 以 × 按鈕、點擊彈窗外或按 Esc 關閉卡夾，回到地圖<br/>{features/candidate/查詢選區候選人.feature}"]
     S7 --> END([結束])
     %% 內容來源（Q5 已確認）：大頭照、3D 模型、政見由專案擁有者以靜態檔案放入 repo 並重新部署；無後台、無內容維護者 Actor
